@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "piofthings", "piofthings\piofthings.csproj", "{6241CE95-A1F6-44C4-81A5-029EB96EACD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "piofthings.hub", "piofthings.hub\piofthings.hub.csproj", "{C6B925AA-7359-4D2B-92F1-795CDF537D66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "piofthings.data", "piofthings.data\piofthings.data.csproj", "{4DBDDBAF-4911-46C6-AF76-7269071609EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6241CE95-A1F6-44C4-81A5-029EB96EACD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6241CE95-A1F6-44C4-81A5-029EB96EACD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6241CE95-A1F6-44C4-81A5-029EB96EACD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6241CE95-A1F6-44C4-81A5-029EB96EACD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6B925AA-7359-4D2B-92F1-795CDF537D66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6B925AA-7359-4D2B-92F1-795CDF537D66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6B925AA-7359-4D2B-92F1-795CDF537D66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6B925AA-7359-4D2B-92F1-795CDF537D66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DBDDBAF-4911-46C6-AF76-7269071609EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DBDDBAF-4911-46C6-AF76-7269071609EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DBDDBAF-4911-46C6-AF76-7269071609EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DBDDBAF-4911-46C6-AF76-7269071609EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -7,8 +7,6 @@ using Piofthings.Data.Identity;
 
 namespace Piofthings.Data.Models
 {
-
-
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()

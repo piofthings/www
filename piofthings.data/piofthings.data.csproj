@@ -57,6 +57,7 @@
     <Compile Include="Identity\ApplicationUser.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Device.cs" />
+    <Compile Include="Models\Newsletter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

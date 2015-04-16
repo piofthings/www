@@ -48,8 +48,9 @@ namespace Piofthings.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Identifier,Account")] Device device)
+        public ActionResult Create([Bind(Include = "Id,Identifier")] Device device)
         {
+            device.Account = User.Identity.Name;
             if (ModelState.IsValid)
             {
                 db.Devices.Add(device);

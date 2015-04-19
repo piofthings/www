@@ -13,24 +13,42 @@
         <dl class="dl-horizontal">
             <dt>
                 @Html.DisplayNameFor(model => model.Identifier)
+                @Html.HiddenFor(model => model.Identifier, new { id="identifier" })
             </dt>
 
             <dd>
                 @Html.DisplayFor(model => model.Identifier)
             </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Account)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Account)
-            </dd>
-
         </dl>
+        <h1>Controlling Relays from the web using SignalR </h1>
+        <button id="turnOn1" class="btn btn-success">Turn On  1</button>
+        <button id="turnOff1" class="btn btn-danger">Turn Off 1</button>
+
+        
     </div>
     <p>
         @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
         @Html.ActionLink("Back to List", "Index")
     </p>
 </div>
+
+
+@section Scripts{
+<script type="text/javascript" src="/Scripts/jquery.signalR-2.2.0.min.js"></script>
+<script type="text/javascript" src="/signalr/hubs"></script>
+
+<script type="text/javascript">
+    $(function () {
+        var hub = $.connection.PiotHub;
+        $.connection.hub.start().done(function () {
+            var deviceId = $("#identifier").val();
+            $('#turnOn1').click(function () {
+                hub.server.switchOn(17, deviceId);
+            });
+            $('#turnOff1').click(function () {
+                hub.server.switchOff(17, deviceId);
+            });
+        });
+    });
+</script>
+}

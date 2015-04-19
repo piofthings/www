@@ -9,8 +9,9 @@ namespace Piofthings.Data.Models
     public class Newsletter
     {
         public int Id { get; set; }
+        public Guid Key { get; set; }
         public string EmailAddress { get; set; }
-        public string Validated { get; set; }
-        public string Unsubscribed { get; set; }
+        public bool Validated { get; set; }
+        public bool Unsubscribed { get; set; }
     }
 }

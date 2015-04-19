@@ -1,11 +1,21 @@
 ﻿@model Piofthings.Data.Models.Device
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Add new device";
 }
 <div class="container">
 
-    <h2>Create</h2>
+    <h2>Add new Device</h2>
+    <p>Get your device ID by typing the following command</p>
+    <code>
+        sudo mono piofthings.exe --id
+    </code>
+    <p>Copy the string into the Identifier field below and save.</p>
+    <p>If your Pi is online, it connect to this service, using the following command</p>
+    <code>
+        sudo mono piofthings.exe --connect https://www.piofthings.net/ 
+    </code>
+    <p>Your Device dashboard will show the status of your connected devices</p>
 
 
     @using (Html.BeginForm())
@@ -13,7 +23,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
-            <h4>Device</h4>
+            <h4></h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
@@ -24,13 +34,13 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            @*<div class="form-group">
                 @Html.LabelFor(model => model.Account, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Account, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Account, "", new { @class = "text-danger" })
                 </div>
-            </div>
+            </div>*@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">

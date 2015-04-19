@@ -12,23 +12,22 @@ namespace piofthings.hub
     [HubName("PiotHub")]
     public class PiotHub : Hub
     {
-        public bool Handshake()
+        public string Handshake(string deviceId)
         {
-            return true;
+            Groups.Add(this.Context.ConnectionId, deviceId);
+            return deviceId;
         }
 
-        public void SwitchOn(GpioId gpioPinId)
+        public void SwitchOn(GpioId gpioPinId, string deviceId)
         {
             Console.WriteLine("Switching ON - " + gpioPinId.ToString("D"));
-            Clients.Others.switchOn(gpioPinId);
+            Clients.Group(deviceId).switchOn(gpioPinId);
         }
 
-        public void switchOff(GpioId gpioPinId)
+        public void SwitchOff(GpioId gpioPinId, string deviceId)
         {
             Console.WriteLine("Switching OFF - " + gpioPinId.ToString("D"));
-
-            Clients.Others.switchOff(gpioPinId);
+            Clients.Group(deviceId).switchOff(gpioPinId);
         }
-
     }
 }

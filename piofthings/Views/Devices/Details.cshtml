@@ -1,11 +1,11 @@
 ﻿@model Piofthings.Data.Models.Device
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Device details";
 }
 <div class="container">
 
-    <h2>Details</h2>
+    <h2>Device details</h2>
 
     <div>
         <h4>Device</h4>
@@ -15,16 +15,13 @@
                 @Html.DisplayNameFor(model => model.Identifier)
                 @Html.HiddenFor(model => model.Identifier, new { id="identifier" })
             </dt>
-
             <dd>
                 @Html.DisplayFor(model => model.Identifier)
             </dd>
         </dl>
-        <h1>Controlling Relays from the web using SignalR </h1>
+        <h4>Controlling Relays from the web using SignalR </h4>
         <button id="turnOn1" class="btn btn-success">Turn On  1</button>
         <button id="turnOff1" class="btn btn-danger">Turn Off 1</button>
-
-        
     </div>
     <p>
         @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |

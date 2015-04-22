@@ -22,6 +22,8 @@
         <h4>Controlling Relays from the web using SignalR </h4>
         <button id="turnOn1" class="btn btn-success">Turn On  1</button>
         <button id="turnOff1" class="btn btn-danger">Turn Off 1</button>
+        <button id="probe" class="btn btn-primary">Probe</button>
+
     </div>
     <p>
         @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
@@ -44,6 +46,9 @@
             });
             $('#turnOff1').click(function () {
                 hub.server.switchOff(17, deviceId);
+            });
+            $('#probe').click(function () {
+                hub.server.sendStatusProbe(deviceId);
             });
         });
     });

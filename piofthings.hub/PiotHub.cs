@@ -18,6 +18,18 @@ namespace piofthings.hub
             return deviceId;
         }
 
+        public void SendStatusProbe(string deviceId)
+        {
+            Console.WriteLine("Sending Probe");
+            Clients.Group(deviceId).statusProbe();
+        }
+
+        public void CurrentStatus(GpioDeviceState statusData)
+        {
+            var stringData = Newtonsoft.Json.JsonConvert.SerializeObject(statusData, Newtonsoft.Json.Formatting.Indented);
+            Console.WriteLine("Probe Status recieved:" + stringData);
+        }
+
         public void SwitchOn(GpioId gpioPinId, string deviceId)
         {
             Console.WriteLine("Switching ON - " + gpioPinId.ToString("D"));

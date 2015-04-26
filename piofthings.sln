@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "piofthings", "piofthings\piofthings.csproj", "{6241CE95-A1F6-44C4-81A5-029EB96EACD3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "piofthings.web", "piofthings\piofthings.web.csproj", "{6241CE95-A1F6-44C4-81A5-029EB96EACD3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "piofthings.hub", "piofthings.hub\piofthings.hub.csproj", "{C6B925AA-7359-4D2B-92F1-795CDF537D66}"
 EndProject

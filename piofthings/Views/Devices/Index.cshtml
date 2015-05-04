@@ -1,21 +1,18 @@
 ﻿@model IEnumerable<Piofthings.Data.Models.Device>
 
 @{
-    ViewBag.Title = "Pi of things - My devices";
+    ViewBag.Title = "My devices";
 }
+@Html.Partial("_HeaderPartial")
 <div class="container">
-    <h2>My devices</h2>
-
+    <br/>    
     <p>
         @Html.ActionLink("Register New device", "Create")
     </p>
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Identifier)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Account)
+                @Html.DisplayNameFor(model => model.Name)
             </th>
             <th></th>
         </tr>
@@ -24,14 +21,10 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Identifier)
+                    @Html.ActionLink((string.IsNullOrEmpty(item.Name)? "Details": item.Name), "Details", new { id = item.Id })
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Account)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |                    
                     @Html.ActionLink("Delete", "Delete", new { id = item.Id })
                 </td>
             </tr>

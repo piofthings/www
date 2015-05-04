@@ -3,26 +3,20 @@
 @{
     ViewBag.Title = "Device details";
 }
+@Html.Partial("_HeaderPartial")
 <div class="container">
-
-    <h2>Device details</h2>
-
     <div>
-        <h4>Device</h4>
+        <br/>
+        <h4>Device @Html.DisplayNameFor(model => model.Identifier) - @Html.DisplayFor(model => model.Identifier)</h4>
+        @Html.HiddenFor(model => model.Identifier, new { id = "identifier" })
         <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Identifier)
-                @Html.HiddenFor(model => model.Identifier, new { id="identifier" })
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Identifier)
-            </dd>
-        </dl>
-        <h4>Controlling Relays from the web using SignalR </h4>
+        <h4></h4>
         <button id="turnOn1" class="btn btn-success">Turn On  1</button>
         <button id="turnOff1" class="btn btn-danger">Turn Off 1</button>
         <button id="probe" class="btn btn-primary">Probe</button>
+        <br/>
+        <button id="turnOn2" class="btn btn-success">Turn On  2</button>
+        <button id="turnOff2" class="btn btn-danger">Turn Off 2</button>
 
     </div>
     <p>
@@ -39,14 +33,53 @@
 <script type="text/javascript">
     $(function () {
         var hub = $.connection.PiotHub;
+        var timer = null;
+        var timer2 = null;
+
         $.connection.hub.start().done(function () {
             var deviceId = $("#identifier").val();
+            var on1 = true;
+            var on2 = true;
             $('#turnOn1').click(function () {
-                hub.server.switchOn(17, deviceId);
+                if (timer != null)
+                {
+                    clearTimeout(timer);
+                }
+                hub.server.switchOn(26, deviceId)
             });
             $('#turnOff1').click(function () {
-                hub.server.switchOff(17, deviceId);
+                timer = setInterval(function () {
+                    if (on1) {
+                        on1 = false;
+                        hub.server.switchOn(26, deviceId);
+                    }
+                    else
+                    {
+                        on1 = true;
+                        hub.server.switchOff(26, deviceId);
+                    }
+                }, 500);                
             });
+
+            $('#turnOn2').click(function () {
+                if (timer2 != null) {
+                    clearTimeout(timer2);
+                }
+                hub.server.switchOn(13, deviceId)
+            });
+            $('#turnOff2').click(function () {
+                timer2 = setInterval(function () {
+                    if (on2) {
+                        on2 = false;
+                        hub.server.switchOn(13, deviceId);
+                    }
+                    else {
+                        on2 = true;
+                        hub.server.switchOff(13, deviceId);
+                    }
+                }, 200);
+            });
+
             $('#probe').click(function () {
                 hub.server.sendStatusProbe(deviceId);
             });

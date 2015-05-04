@@ -58,8 +58,14 @@
     <Compile Include="Contexts\DeviceContext.cs" />
     <Compile Include="Contexts\IdentityModels.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
+    <Compile Include="Migrations\201505040720214_DeviceEndPoints.cs" />
+    <Compile Include="Migrations\201505040720214_DeviceEndPoints.Designer.cs">
+      <DependentUpon>201505040720214_DeviceEndPoints.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Device.cs" />
+    <Compile Include="Models\EndPoint.cs" />
+    <Compile Include="Models\EndPointType.cs" />
     <Compile Include="Models\GpioState.cs" />
     <Compile Include="Models\Newsletter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +73,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201505040720214_DeviceEndPoints.resx">
+      <DependentUpon>201505040720214_DeviceEndPoints.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

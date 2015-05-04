@@ -19,7 +19,7 @@ namespace Piofthings.Web.Controllers
         // GET: Devices
         public ActionResult Index()
         {
-            return View(db.Devices.ToList());
+            return View(db.Devices.Where<Device>(d=> d.Account == User.Identity.Name).ToList());
         }
 
         // GET: Devices/Details/5
@@ -81,10 +81,11 @@ namespace Piofthings.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Identifier")] Device device)
+        public ActionResult Edit([Bind(Include = "Id,Identifier,Name")] Device device)
         {
             if (ModelState.IsValid)
             {
+                device.Account = User.Identity.Name;
                 db.Entry(device).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

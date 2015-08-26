@@ -8,9 +8,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Piofthings.Data.Models;
 using Piofthings.Web.View.Models;
-using Piofthings.Data.Identity;
 
 namespace Piofthings.Web.Controllers
 {

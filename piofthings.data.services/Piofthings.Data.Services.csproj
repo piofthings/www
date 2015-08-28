@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -47,11 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Piofthings.Data.Models\Piofthings.Data.Models.csproj">
-      <Project>{8c5404de-9435-4760-b4bd-61cb819ce5c5}</Project>
+      <Project>{8C5404DE-9435-4760-B4BD-61CB819CE5C5}</Project>
       <Name>Piofthings.Data.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\piofthings.domain.data\Piofthings.Domain.Models.csproj">
-      <Project>{1ee39083-9403-4980-b725-3cbe3d394995}</Project>
+      <Project>{1EE39083-9403-4980-B725-3CBE3D394995}</Project>
       <Name>Piofthings.Domain.Models</Name>
     </ProjectReference>
   </ItemGroup>
@@ -60,7 +60,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetDir)$(TargetFileName) $(SolutionDir)Piofthings\bin</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
